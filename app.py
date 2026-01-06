@@ -1,3 +1,8 @@
+from flask import redirect
+
+@app.route("/")
+def home():
+    return redirect("/pos")
 from flask import Flask, request, redirect
 import sqlite3
 from datetime import datetime
@@ -281,4 +286,5 @@ def print_inv(i):
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=10000)
+
 
