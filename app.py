@@ -1,3 +1,11 @@
+from flask import Flask, redirect
+
+app = Flask(__name__)
+
+@app.route("/")
+def home():
+    return "POS is running ✅"
+
 from flask import redirect
 
 @app.route("/")
@@ -7,7 +15,6 @@ from flask import Flask, request, redirect
 import sqlite3
 from datetime import datetime
 
-app = Flask(__name__)
 
 # ---------------- DB ----------------
 def db():
@@ -286,5 +293,6 @@ def print_inv(i):
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=10000)
+
 
 
